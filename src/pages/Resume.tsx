@@ -21,6 +21,82 @@ const Resume = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left Column */}
             <div className="space-y-8">
+              {/* Professional Experience */}
+              <Card className="bg-gray-900 border-gray-700">
+                <CardHeader>
+                  <CardTitle className="text-white">Professional Experience</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="border-l-4 border-green-400 pl-4">
+                    <h3 className="text-green-400 font-semibold text-lg">ASSOCIATE PRODUCT MANAGER</h3>
+                    <p className="text-gray-400 flex items-center gap-2 mt-1">
+                      <Calendar className="h-4 w-4" />
+                      Sep 2022 - Dec 2023
+                    </p>
+                    <p className="text-white flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
+                      Cogoport Pvt Ltd, Gurugram, Haryana
+                    </p>
+                    <ul className="text-gray-300 mt-3 space-y-2 list-disc list-inside">
+                      <li>Crafted and implemented a holistic Business Finance solution, integrating end-to-end purchase and sales invoicing capabilities catering to more than 20K customers and suppliers. Conceptualized and established more than 10 finance products including Invoice management, Audit function, Fraud management, Revenue Leakage, PayRuns module, settlements, customer outstanding balances, IRN generation, dunning protocols and payment gateway integration and formulated a GTM Strategy.</li>
+                      <li>Worked closely with stakeholders to gather business requirements, define product roadmaps, create implementation business case.</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-green-400 pl-4">
+                    <h3 className="text-green-400 font-semibold text-lg">ASSOCIATE SOFTWARE ENGINEER</h3>
+                    <p className="text-gray-400 flex items-center gap-2 mt-1">
+                      <Calendar className="h-4 w-4" />
+                      May 2022 - Sep 2022
+                    </p>
+                    <p className="text-white flex items-center gap-2">
+                      <MapPin className="h-4 w-4" />
+                      Cogoport Pvt Ltd, Gurugram, Haryana
+                    </p>
+                    <ul className="text-gray-300 mt-3 space-y-2 list-disc list-inside">
+                      <li>Built RPA interpreter for inbound supplier emails with logistic details to streamline logistics and automate document uploads. Achieved 60% manual work reduction and 93% data accuracy improvement.</li>
+                      <li>Integrated with Outlook mails to read and classify 100% incoming mails</li>
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+              
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-8">
+              
+              {/* Skills Summary */}
+              <Card className="bg-gray-900 border-gray-700">
+                <CardHeader>
+                  <CardTitle className="text-white">Core Competencies</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="text-green-400 font-semibold mb-2">Product Management</h4>
+                      <ul className="text-gray-300 text-sm space-y-1">
+                        <li>• Product Strategy</li>
+                        <li>• Roadmap Planning</li>
+                        <li>• Stakeholder Management</li>
+                        <li>• A/B Testing</li>
+                        <li>• KPI Measurement</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="text-green-400 font-semibold mb-2">Technical Skills</h4>
+                      <ul className="text-gray-300 text-sm space-y-1">
+                        <li>• Python Programming</li>
+                        <li>• SQL & Data Analysis</li>
+                        <li>• RPA & Automation</li>
+                        <li>• Cloud Technologies</li>
+                        <li>• UI/UX Design</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
               {/* Summary */}
               <Card className="bg-gray-900 border-gray-700">
                 <CardHeader>
@@ -101,80 +177,7 @@ const Resume = () => {
                   </div>
                 </CardContent>
               </Card>
-            </div>
-
-            {/* Right Column */}
-            <div className="space-y-8">
-              {/* Professional Experience */}
-              <Card className="bg-gray-900 border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white">Professional Experience</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="border-l-4 border-green-400 pl-4">
-                    <h3 className="text-green-400 font-semibold text-lg">ASSOCIATE PRODUCT MANAGER</h3>
-                    <p className="text-gray-400 flex items-center gap-2 mt-1">
-                      <Calendar className="h-4 w-4" />
-                      Sep 2022 - Dec 2023
-                    </p>
-                    <p className="text-white flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      Cogoport Pvt Ltd, Gurugram, Haryana
-                    </p>
-                    <ul className="text-gray-300 mt-3 space-y-2 list-disc list-inside">
-                      <li>Crafted and implemented a holistic Business Finance solution, integrating end-to-end purchase and sales invoicing capabilities catering to more than 20K customers and suppliers. Conceptualized and established more than 10 finance products including Invoice management, Audit function, Fraud management, Revenue Leakage, PayRuns module, settlements, customer outstanding balances, IRN generation, dunning protocols and payment gateway integration and formulated a GTM Strategy.</li>
-                      <li>Worked closely with stakeholders to gather business requirements, define product roadmaps, create implementation business case.</li>
-                    </ul>
-                  </div>
-
-                  <div className="border-l-4 border-green-400 pl-4">
-                    <h3 className="text-green-400 font-semibold text-lg">ASSOCIATE SOFTWARE ENGINEER</h3>
-                    <p className="text-gray-400 flex items-center gap-2 mt-1">
-                      <Calendar className="h-4 w-4" />
-                      May 2022 - Sep 2022
-                    </p>
-                    <p className="text-white flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      Cogoport Pvt Ltd, Gurugram, Haryana
-                    </p>
-                    <ul className="text-gray-300 mt-3 space-y-2 list-disc list-inside">
-                      <li>Built RPA interpreter for inbound supplier emails with logistic details to streamline logistics and automate document uploads. Achieved 60% manual work reduction and 93% data accuracy improvement.</li>
-                      <li>Integrated with Outlook mails to read and classify 100% incoming mails</li>
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Skills Summary */}
-              <Card className="bg-gray-900 border-gray-700">
-                <CardHeader>
-                  <CardTitle className="text-white">Core Competencies</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <h4 className="text-green-400 font-semibold mb-2">Product Management</h4>
-                      <ul className="text-gray-300 text-sm space-y-1">
-                        <li>• Product Strategy</li>
-                        <li>• Roadmap Planning</li>
-                        <li>• Stakeholder Management</li>
-                        <li>• A/B Testing</li>
-                        <li>• KPI Measurement</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="text-green-400 font-semibold mb-2">Technical Skills</h4>
-                      <ul className="text-gray-300 text-sm space-y-1">
-                        <li>• Python Programming</li>
-                        <li>• SQL & Data Analysis</li>
-                        <li>• RPA & Automation</li>
-                        <li>• Cloud Technologies</li>
-                        <li>• UI/UX Design</li>
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              
             </div>
           </div>
         </div>
