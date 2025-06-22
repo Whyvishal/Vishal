@@ -1,24 +1,26 @@
 
 import { Quote, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import Suhas from "@/assets/img/Suhas.png";
+import Retesh from "@/assets/img/Retesh.png";
 
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      role: "Senior Engineering Manager",
+      name: "Retesh Singh",
+      role: "Senior Product Manager",
       company: "Cogoport Pvt Ltd",
-      content: "Vishal's ability to translate complex business requirements into actionable product strategies is exceptional. His work on our finance solution directly contributed to our 300% customer growth.",
+      content: "Vishal worked as a Product Analyst in my team at Cogoport for approx. an year. His technical acumen as well as the ability to take independent charge for few product initiatives impressed me a lot. His work played a key role in delivering Cogoport's shipment orchestrator platform successfully.I have seen Vishal perform well both as an individual contributor and as a part of a broader team. His work ethics are good and I found his temperament to be positive.I highly recommend him for product roles across levels. He'll be a great hire in your team.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1494790108755-2616c0763c65?w=150&h=150&fit=crop&crop=face"
+      image: Retesh
     },
     {
-      name: "Michael Chen",
-      role: "VP of Product",
-      company: "TechCorp",
-      content: "Working with Vishal was a game-changer for our team. His strategic thinking and execution capabilities helped us launch three successful products in record time.",
+      name: "Suhas Latelwar",
+      role: "Senior Product Manager",
+      company: "Cogoport Pvt Ltd",
+      content: "I had the privilege of working closely with Vishal, where both of us were a part of the product team at cogoport. He displayed remarkable strategic foresight and exceptional execution skills. His ability to deeply understand user needs and translate them into actionable product roadmaps was truly impressive. His collaborative approach and focus on outcomes consistently boosted our team to deliver impactful solutions. A true asset to any organization, I highly recommend Vishal for his outstanding product skills and ability to drive results. Glad I got to work with him.",
       rating: 5,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      image: Suhas
     },
     {
       name: "Emily Rodriguez",
