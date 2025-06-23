@@ -17,10 +17,10 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 bg-gray-950/10 backdrop-blur-xl backdrop-saturate-150 z-50 border-b border-white/10 shadow-lg shadow-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-white font-bold text-xl">
+          <Link to="/" className="text-white font-orbitron font-bold text-xl hover:text-green-400 transition-colors duration-300 drop-shadow-lg">
             Vishal Chahar
           </Link>
 
@@ -31,10 +31,10 @@ const Navigation = () => {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 drop-shadow-md ${
                     isActive(item.path)
-                      ? "text-green-400 border-b-2 border-green-400"
-                      : "text-gray-300 hover:text-white"
+                      ? "text-green-400 border-b-0 border-green-400 shadow-green-400/30"
+                      : "text-gray-200 hover:text-green-400 hover:backdrop-blur-sm"
                   }`}
                 >
                   {item.label}
@@ -47,7 +47,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-400 hover:text-white p-2"
+              className="text-gray-400 hover:text-green-400 p-2 transition-colors duration-300 backdrop-blur-sm rounded-lg"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -57,17 +57,17 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-sm">
+        <div className="md:hidden bg-gray-950/20 backdrop-blur-xl backdrop-saturate-150 border-t border-white/10 animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
+                className={`block px-3 py-2 text-base font-medium transition-all duration-300 rounded-lg ${
                   isActive(item.path)
-                    ? "text-green-400 bg-gray-900"
-                    : "text-gray-300 hover:text-white hover:bg-gray-800"
+                    ? "text-green-400 bg-white/5 backdrop-blur-sm shadow-green-400/20"
+                    : "text-gray-300 hover:text-green-400 hover:bg-white/5 hover:backdrop-blur-sm"
                 }`}
               >
                 {item.label}
