@@ -1,4 +1,12 @@
-import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type Verdict = { score: number | null; done: boolean };
 
@@ -16,13 +24,21 @@ export function ShowProvider({ children }: { children: ReactNode }) {
   const [scores, setScores] = useState<Record<string, Verdict>>({});
   const [askingId, setAskingId] = useState<string | null>(null);
 
+  const scoresRef = useRef(scores);
+  scoresRef.current = scores;
+
   const ask = useCallback((id: string) => {
-    setScores((prev) => (prev[id]?.done ? prev : prev));
-    setAskingId((cur) => cur ?? id);
+    setAskingId((cur) => {
+      if (cur !== null) return cur; // another act is already being judged
+      if (scoresRef.current[id]?.done) return cur; // already scored or skipped
+      return id;
+    });
   }, []);
 
   const record = useCallback((id: string, score: number | null) => {
-    setScores((prev) => (prev[id]?.done ? prev : { ...prev, [id]: { score, done: true } }));
+    setScores((prev) =>
+      prev[id]?.done ? prev : { ...prev, [id]: { score, done: true } },
+    );
     setAskingId((cur) => (cur === id ? null : cur));
   }, []);
 

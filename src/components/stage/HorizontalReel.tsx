@@ -9,13 +9,22 @@ const m = motionReact.motion;
  * proportion to scroll progress through the section). Reel.tsx uses this for
  * photo plates; other acts use it directly for arbitrary card content.
  */
+const DEFAULT_TRACK_CLASS =
+  "flex items-start gap-10 pl-[6vw] pr-[6vw] will-change-transform";
+
 export default function HorizontalReel({
   id,
   count,
+  header,
+  trackClassName = DEFAULT_TRACK_CLASS,
+  trackStyle = {},
   children,
 }: {
   id: string;
   count: number;
+  header?: ReactNode;
+  trackClassName?: string;
+  trackStyle?: { gridTemplateRows?: string; gridAutoColumns?: string };
   children: ReactNode;
 }) {
   const section = useRef<HTMLDivElement>(null);
@@ -58,14 +67,17 @@ export default function HorizontalReel({
       style={{ height: `${100 + count * 60}vh` }}
       className="relative"
     >
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        <m.div
-          ref={track}
-          style={{ x }}
-          className="flex gap-10 pl-[6vw] pr-[6vw] will-change-transform"
-        >
-          {children}
-        </m.div>
+      <div className="sticky top-0 flex h-screen flex-col overflow-hidden">
+        {header}
+        <div className="flex flex-1 items-center overflow-hidden">
+          <m.div
+            ref={track}
+            style={{ ...trackStyle, x }}
+            className={trackClassName}
+          >
+            {children}
+          </m.div>
+        </div>
       </div>
     </div>
   );

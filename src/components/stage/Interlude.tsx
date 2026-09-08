@@ -15,12 +15,12 @@ export default function Interlude({
   useEffect(() => {
     const el = anchor.current;
     if (!el) return;
+    // Kept observing rather than disconnecting on first hit: scrolling away
+    // dismisses the panel without answering, and re-entering asks again.
+    // `ask` itself ignores acts that were already scored or skipped.
     const io = new IntersectionObserver(
       (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          ask(id);
-          io.disconnect();
-        }
+        if (entries.some((e) => e.isIntersecting)) ask(id);
       },
       { threshold: 0.6 },
     );
@@ -34,3 +34,4 @@ export default function Interlude({
     </div>
   );
 }
+
