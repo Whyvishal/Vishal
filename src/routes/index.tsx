@@ -9,6 +9,7 @@ import PhotoGrid from "@/components/stage/PhotoGrid";
 import Interlude from "@/components/stage/Interlude";
 import Bow from "@/components/stage/Bow";
 import { ShowProvider } from "@/lib/show";
+import { asset } from "@/lib/asset";
 import { reveal, useStageScrollListener } from "@/hooks/useStageScroll";
 
 const m = motionReact.motion;
@@ -46,97 +47,22 @@ const INSTAGRAM_URL = "[INSTAGRAM_URL]";
 const isToken = (s: string) => /^\[.*\]$/.test(s);
 
 const sketches = [
-  {
-    src: "/plates/sketches/IMG_4212.jpg",
-    alt: "",
-    title: "[SKETCH_15_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/IMG_4206.jpg",
-    alt: "",
-    title: "[SKETCH_9_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/IMG_4207.jpg",
-    alt: "",
-    title: "[SKETCH_10_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/IMG_4210.jpg",
-    alt: "",
-    title: "[SKETCH_13_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20180717_062815.jpg",
-    alt: "",
-    title: "[SKETCH_1_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20210612_230957.jpg",
-    alt: "",
-    title: "[SKETCH_2_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20210614_222348.jpg",
-    alt: "",
-    title: "[SKETCH_3_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20210615_215517.jpg",
-    alt: "",
-    title: "[SKETCH_4_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20210616_224018.jpg",
-    alt: "",
-    title: "[SKETCH_5_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20210617_220451.jpg",
-    alt: "",
-    title: "[SKETCH_6_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20210630_212607.jpg",
-    alt: "",
-    title: "[SKETCH_7_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/20220202_222009.jpg",
-    alt: "",
-    title: "[SKETCH_8_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/IMG_4208.jpg",
-    alt: "",
-    title: "[SKETCH_11_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/IMG_4209.jpg",
-    alt: "",
-    title: "[SKETCH_12_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-  {
-    src: "/plates/sketches/IMG_4211.jpg",
-    alt: "",
-    title: "[SKETCH_14_TITLE]",
-    meta: "[MEDIUM], [YEAR]",
-  },
-];
+  "IMG_4212.jpg",
+  "IMG_4206.jpg",
+  "IMG_4207.jpg",
+  "IMG_4210.jpg",
+  "20180717_062815.jpg",
+  "20210612_230957.jpg",
+  "20210614_222348.jpg",
+  "20210615_215517.jpg",
+  "20210616_224018.jpg",
+  "20210617_220451.jpg",
+  "20210630_212607.jpg",
+  "20220202_222009.jpg",
+  "IMG_4208.jpg",
+  "IMG_4209.jpg",
+  "IMG_4211.jpg",
+].map((name) => ({ src: asset(`plates/sketches/${name}`), alt: "" }));
 
 const photos = [
   "IMG_1278.jpeg",
@@ -154,23 +80,23 @@ const photos = [
   "IMG_3005.jpeg",
   "IMG_3932.jpeg",
   "IMG_3933.jpeg",
-].map((name) => ({ src: `/plates/photos/${name}`, alt: "" }));
+].map((name) => ({ src: asset(`plates/photos/${name}`), alt: "" }));
 
 const sports = [
   {
     event: "Long Jump",
     placing: "Third place",
-    certificate: "/plates/certificates/long_jump_upright.jpg",
+    certificate: asset("plates/certificates/long_jump_upright.jpg"),
   },
   {
     event: "Kho-Kho",
     placing: "WINNER",
-    certificate: "/plates/certificates/kho_kho_upright.jpg",
+    certificate: asset("plates/certificates/kho_kho_upright.jpg"),
   },
   {
     event: "Kabaddi",
     placing: "WINNER",
-    certificate: "/plates/certificates/kabaddi_upright.jpg",
+    certificate: asset("plates/certificates/kabaddi_upright.jpg"),
   },
 ];
 
@@ -217,7 +143,7 @@ const recommendations = [
     name: "Retesh Singh",
     role: "Senior Product Manager",
     company: "Cogoport Pvt Ltd",
-    photo: "/plates/Recomendations/Retesh.png",
+    photo: asset("plates/Recomendations/Retesh.png"),
     content:
       "Vishal worked as a Product Analyst in my team at Cogoport for approx. an year. His technical acumen as well as the ability to take independent charge for few product initiatives impressed me a lot. His work played a key role in delivering Cogoport's shipment orchestrator platform successfully. I have seen Vishal perform well both as an individual contributor and as a part of a broader team. His work ethics are good and I found his temperament to be positive. I highly recommend him for product roles across levels. He'll be a great hire in your team.",
   },
@@ -225,7 +151,7 @@ const recommendations = [
     name: "Suhas Latelwar",
     role: "Senior Product Manager",
     company: "Cogoport Pvt Ltd",
-    photo: "/plates/Recomendations/Suhas.png",
+    photo: asset("plates/Recomendations/Suhas.png"),
     content:
       "I had the privilege of working closely with Vishal, where both of us were a part of the product team at cogoport. He displayed remarkable strategic foresight and exceptional execution skills. His ability to deeply understand user needs and translate them into actionable product roadmaps was truly impressive. His collaborative approach and focus on outcomes consistently boosted our team to deliver impactful solutions. A true asset to any organization, I highly recommend Vishal for his outstanding product skills and ability to drive results. Glad I got to work with him.",
   },
@@ -328,7 +254,7 @@ function StagePage() {
             <div className="aspect-video w-full overflow-hidden border-4 border-ink bg-paper">
               {isToken(VIDEO_URL) ? (
                 <img
-                  src="/plates/Rap/Rap.png"
+                  src={asset("plates/Rap/Rap.png")}
                   alt=""
                   className="h-full w-full object-cover"
                 />

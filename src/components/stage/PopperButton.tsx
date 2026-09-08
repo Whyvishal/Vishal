@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { PartyPopper } from "lucide-react";
+import { asset } from "@/lib/asset";
 
 // The CTA gif carries real alpha, so it composites normally. The success and
 // fail clips are video exports on a solid black canvas, so those two get
 // `mix-blend-screen` to drop the black against the dark stage.
-const CTA_SRC = "/plates/confetti/popper_cta.gif";
-const SUCCESS_SRC = "/plates/confetti/animation_of_success.gif";
-const FAIL_SRC = "/plates/confetti/animation_of_failed.gif";
+const CTA_SRC = asset("plates/confetti/popper_cta.gif");
+const SUCCESS_SRC = asset("plates/confetti/animation_of_success.gif");
+const FAIL_SRC = asset("plates/confetti/animation_of_failed.gif");
 const CLIP_DURATION_MS = 2600;
 
 export default function PopperButton() {
